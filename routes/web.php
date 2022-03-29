@@ -13,11 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::Get('/oppassers/create', [\App\Http\Controllers\OppasserController::class, 'create']);
-Route::Post('/oppassers', [\App\Http\Controllers\OppasserController::class, 'store']);
-Route::get('/oppassers/{id}', [\App\Http\Controllers\OppasserController::class,'show']);
-Route::get('/oppassers', [\App\Http\Controllers\OppasserController::class,'index']);
+Route::middleware(['auth'])->group(function (){
+    Route::get('/', [\App\Http\Controllers\OppasserController::class,'index']);
+    Route::get('/oppassers', [\App\Http\Controllers\OppasserController::class,'index']);
+    Route::get('/oppassers/{id}', [\App\Http\Controllers\OppasserController::class,'show']);
+});
 
-Route::get('/dieren', [\App\Http\Controllers\DierController::class,'index']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/', [\App\Http\Controllers\OppasserController::class,'index']);
+require __DIR__.'/auth.php';
