@@ -19,7 +19,17 @@ class UserSeeder extends Seeder
             'email' => 'niels.dobbelaar@gmail.com',
             'password' => bcrypt('admin'),
             'blocked' => 'no',
-            'admin' => 'yes'
+            'admin' => 'yes',
+            'hasPage' => 'yes'
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'jaap',
+            'email' => 'jaap@hsleiden.com',
+            'password' => bcrypt('jaap'),
+            'blocked' => 'no',
+            'admin' => 'no',
+            'hasPage' => 'no'
         ]);
     }
 }

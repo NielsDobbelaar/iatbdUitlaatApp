@@ -17,11 +17,12 @@ class CreateDierTable extends Migration
             $table->id();
             $table->string("naam");
             $table->string("diersoort");
-            $table->date("start-datum");
-            $table->date("eind-datum");
+            $table->date("startDatum");
+            $table->date("eindDatum");
             $table->integer("uurtarief");
             $table->string("beschrijving");
             $table->string("foto")->default('/img/default_dier.jpg');
+            $table->integer("eigenaar");
         });
     }
 

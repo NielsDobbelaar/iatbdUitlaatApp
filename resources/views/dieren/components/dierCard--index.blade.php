@@ -1,5 +1,5 @@
 <li class="gridCard" >
-    <a href="/oppassers/{{$dier->id}}">
+    <a href="/dieren/{{$dier->id}}">
         <article>
             <header class="gridCard__header u-center-v">
                 <h2 class="gridCard__heading">{{$dier->naam}}</h2>

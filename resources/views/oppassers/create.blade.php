@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <article class="create-form">
-    <h1 class="page-header">Maak een oppas advertentie</h1>
+    <h1 class="page-header">Maak een oppas profiel!</h1>
     <form class="create-form__form" action="/oppassers" method="POST">
         @csrf
         <section class="create-form__section">

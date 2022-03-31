@@ -19,6 +19,7 @@ class CreateOppasserTable extends Migration
             $table->string("email");
             $table->string("foto")->default('/img/default_home.jpg');
             $table->string("beschrijving");
+            $table->integer('user')->unique();
         });
     }
 

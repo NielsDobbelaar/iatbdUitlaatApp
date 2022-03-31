@@ -9,6 +9,6 @@
         <p>Contactgegevens: {{$oppasser->email}}</p>
     </section>
     <section class="oppasserCard__btnSection u-center-h">
-        <button class="oppasserCard__button" onclick="window.location.href='/oppassers'">home</button>
+        <button class="oppasserCard__button" onclick="window.location.href='{{ url()->previous() }}'">terug</button>
     </section>
 </article>

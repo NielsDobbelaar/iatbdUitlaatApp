@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use DB;
 
 class OppasserController extends Controller
 {
@@ -28,9 +30,13 @@ class OppasserController extends Controller
         $oppasser->email = $request->input('email');
         $oppasser->foto = $request->input('foto');
         $oppasser->beschrijving = $request->input('beschrijving');
+        $oppasser->user = Auth::user()->id;
 
         $oppasser->save();
-        return redirect('/oppassers');
+
+        DB::table('users')->where('id', Auth::user()->id)->update(['hasPage'=> 'yes']);
+
+        return redirect('/dieren');
 
         // try{
         //     $oppasser->save();

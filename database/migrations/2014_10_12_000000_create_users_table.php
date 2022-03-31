@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('blocked')->default('no');
             $table->string('admin')->default('no');
+            $table->string('hasPage')->default('no');
             $table->rememberToken();
         });
     }
