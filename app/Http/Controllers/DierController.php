@@ -18,7 +18,7 @@ class DierController extends Controller
         return view('dieren.show' ,[
             'dier' => \App\Models\Dier::find($id),
             'aanvragen' => \App\Models\Aanvraag::where('dier', $id)->get(),
-            'user' => Auth::user()->id
+            'user' => Auth::user()
         ]);
     }
 

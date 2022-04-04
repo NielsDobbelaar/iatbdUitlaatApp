@@ -16,14 +16,17 @@ Route::middleware(['auth', 'hasPage'])->group(function (){
     Route::POST('/aanvraag', [\App\Http\Controllers\AanvraagController::class,'store']);
 });
 
+Route::get('/', function(){
+    return view('welcome');
+});
 
-Route::middleware(['auth'])->group(function (){
-    Route::get('/', [\App\Http\Controllers\DierController::class,'index']);
+Route::middleware(['auth', 'isBlocked'])->group(function (){
     Route::get('/oppassers', [\App\Http\Controllers\OppasserController::class,'index']);
     Route::get('/oppassers/create', [\App\Http\Controllers\OppasserController::class,'create']);
     Route::get('/oppassers/{id}', [\App\Http\Controllers\OppasserController::class,'show']);
 
 
+    Route::get('/reviews/create/{id}', [\App\Http\Controllers\ReviewController::class,'create']);
 
     Route::get('/dieren', [\App\Http\Controllers\DierController::class,'index']);
     Route::get('/dieren/create', [\App\Http\Controllers\DierController::class,'create']);
@@ -32,10 +35,17 @@ Route::middleware(['auth'])->group(function (){
 
     Route::POST('/dieren', [\App\Http\Controllers\DierController::class,'store']);
     Route::POST('/oppassers', [\App\Http\Controllers\OppasserController::class,'store']);
+    Route::POST('/reviews', [\App\Http\Controllers\ReviewController::class,'store']);
 
     Route::get('/aanvraag/{id}/edit', [\App\Http\Controllers\AanvraagController::class, 'edit']);
 
     Route::DELETE('/aanvraag/{id}', [\App\Http\Controllers\AanvraagController::class, 'destroy']);
+});
+
+Route::middleware(['auth', 'isAdmin'])->group(function (){
+    Route::get('/admin/create', [\App\Http\Controllers\AdminController::class,'create']);
+    Route::POST('/admin', [\App\Http\Controllers\AdminController::class,'store']);
+
 });
 
 Route::get('/dashboard', function () {

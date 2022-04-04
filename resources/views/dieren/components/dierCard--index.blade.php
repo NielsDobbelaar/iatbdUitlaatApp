@@ -1,4 +1,4 @@
-<li class="gridCard" >
+<li class="gridCard" data-soort="{{$dier->diersoort}}">
     <a href="/dieren/{{$dier->id}}">
         <article>
             <header class="gridCard__header u-center-v">

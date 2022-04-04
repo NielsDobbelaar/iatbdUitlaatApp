@@ -18,12 +18,13 @@ class DatabaseSeeder extends Seeder
             GeaccepteerdSeeder::class,
             HaspageSeeder::class,
             AdminSeeder::class,
-            OppasserSeeder::class,
             SoortSeeder::class,
-            DierSeeder::class,
             BlockedSeeder::class,
             AanvragenSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+            OppasserSeeder::class,
+            ReviewSeeder::class,
+            DierSeeder::class
         ]);
     }
 }

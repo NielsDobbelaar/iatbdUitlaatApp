@@ -9,11 +9,10 @@
             <p>Van: {{$dier->startDatum}}  Tot: {{$dier->eindDatum}}</p>
             <p>Soort: {{$dier->diersoort}}</p>
             <p>Uur tarief: {{$dier->uurtarief}}</p>
-            <p>{{$dier->beschrijving}}</p>
+            <p>Over {{$dier->naam}}: {{$dier->beschrijving}}</p>
         </section>
         <section class="dierCard__btnSection u-center-h u-flex-gap-2">
-            <button class="dierCard__button" onclick="window.location.href='/dieren'">home</button>
-            @if ($user != $dier->eigenaar)
+            @if($user->id != $dier->eigenaar)
             <form name='dierForm' method='POST' action='/aanvraag'>
             @csrf
                 <input type='hidden' name='dier' id="dier" value='{{$dier->id}}'>
@@ -21,13 +20,15 @@
             </form>
             @endif
         </section>
-        @if ($user == $dier->eigenaar && !$aanvragen->isEmpty())
-        <section class="dierCard__text u-center-h">
-            <h2 class="dierCard__text__header">Oppas Aanmeldingen</h2>
-        </section>
-            @foreach ($aanvragen as $aanvraag)
-                @include('dieren.components.aanmelding--show')
-            @endforeach
+        @if ($user->id == $dier->eigenaar || $user->admin == 'yes')
+            @if (!$aanvragen->isEmpty())
+                <section class="dierCard__text u-center-h">
+                <h2 class="dierCard__text__header">Oppas Aanmeldingen</h2>
+                </section>
+                    @foreach ($aanvragen as $aanvraag)
+                        @include('dieren.components.aanmelding--show')
+                    @endforeach
+            @endif
         @endif
     </section>
 </article>

@@ -19,7 +19,8 @@ class CreateOppasserTable extends Migration
             $table->string("email");
             $table->string("foto")->default('/img/default_home.jpg');
             $table->string("beschrijving");
-            $table->integer('user')->unique();
+            $table->unsignedBigInteger('user');
+            $table->foreign('user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

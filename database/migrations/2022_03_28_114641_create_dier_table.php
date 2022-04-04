@@ -22,7 +22,8 @@ class CreateDierTable extends Migration
             $table->integer("uurtarief");
             $table->string("beschrijving");
             $table->string("foto")->default('/img/default_dier.jpg');
-            $table->integer("eigenaar");
+            $table->unsignedBigInteger("eigenaar");
+            $table->foreign('eigenaar')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

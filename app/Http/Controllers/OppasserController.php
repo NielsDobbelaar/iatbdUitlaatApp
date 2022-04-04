@@ -17,7 +17,10 @@ class OppasserController extends Controller
 
     public function show($id)
     {
-        return view('oppassers.show' ,[ 'oppasser' => \App\Models\Oppasser::find($id)]);
+        return view('oppassers.show' ,[
+            'oppasser' => \App\Models\Oppasser::find($id),
+            'reviews' => \App\Models\Review::where('oppasser', $id)->get()
+    ]);
     }
 
     public function create()
