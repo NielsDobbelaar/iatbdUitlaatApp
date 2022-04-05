@@ -99,6 +99,15 @@ body{
     }
 }
 
+@media (max-width: 28.125rem){
+    .navbar__section__header{
+        font-size: 60%;
+    }
+
+    .navbar__ul{
+        padding: 0;
+    }
+}
 
 
 
@@ -290,6 +299,13 @@ body{
     background: #e6f2f8;
 }
 
+
+@media (max-width: 43.75rem){
+    .oppasserCard{
+        width: 90%;
+    }
+}
+
 .oppasserCard__figure{
     width: 100%;
     height: 60%;
@@ -315,6 +331,25 @@ body{
 .oppasserCard__text__header{
     font-size: 210%;
     padding-bottom: 2rem;
+}
+
+
+@media (max-width: 28.125rem){
+    .oppasserCard__text>p{
+        font-size: 70%;
+    }
+
+    .oppasserCard__text__header{
+        font-size: 170%;
+    }
+
+    .revieuwSection__reviewSection >p {
+        font-size: 70%;
+    }
+
+    .revieuwSection__naam > h2{
+        font-size: 100%;
+    }
 }
 
 .oppasserCard__btnSection{
@@ -346,6 +381,13 @@ body{
     margin-bottom: 10rem;
 }
 
+@media (max-width: 43.75rem){
+    .dierCard{
+        width: 90%;
+    }
+}
+
+
 .dierCard__figure{
     height: 35rem;
     padding: 2rem;
@@ -370,6 +412,16 @@ body{
 .dierCard__text__header{
     font-size: 210%;
     padding-bottom: 2rem;
+}
+
+@media (max-width: 31.25rem){
+    .dierCard__text__header{
+        font-size: 150%;
+    }
+
+    .dierCard__text > p{
+        font-size: 80%;
+    }
 }
 
 .dierCard__btnSection{
@@ -420,6 +472,18 @@ body{
     transition: 0.2s all;
     grid-column: span 6;
 }
+
+
+@media (max-width: 34.375rem){
+    .aanmeldSection__button{
+        font-size: 80%;
+    }
+
+    .aanmeldSection__naam > h2 {
+        font-size: 110%;
+    }
+}
+
 
 
 .oppasserCard__reviewsArticle{
@@ -526,7 +590,7 @@ body{
 }
 
 .create-form__form{
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
     margin-top: 1rem;
     padding: 3rem;
@@ -577,6 +641,14 @@ body{
     font-size: 110%;
     border: none;
 }
+
+
+@media (max-width: 50rem){
+    .create-form__form{
+        width: 90%;
+    }
+}
+
 
 button:hover{
     cursor: pointer;

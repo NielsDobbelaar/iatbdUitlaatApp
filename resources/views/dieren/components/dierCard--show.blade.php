@@ -5,8 +5,9 @@
             <img class="dierCard__image" src="{{$dier->foto}}" alt="Een foto van de leefomgeving">
         </figure>
         <section class="dierCard__text">
-            <h2 class="dierCard__text__header">Wie wilt er passen op {{$dier->naam}}</h2>
-            <p>Van: {{$dier->startDatum}}  Tot: {{$dier->eindDatum}}</p>
+            <h2 class="dierCard__text__header">Wie wilt er passen op {{$dier->naam}}?</h2>
+            <p>Van: {{$dier->startDatum}}</p>
+            <p>Tot: {{$dier->eindDatum}}</p>
             <p>Soort: {{$dier->diersoort}}</p>
             <p>Uur tarief: {{$dier->uurtarief}}</p>
             <p>Over {{$dier->naam}}: {{$dier->beschrijving}}</p>

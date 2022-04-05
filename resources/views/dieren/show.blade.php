@@ -3,6 +3,6 @@
     {{$dier->naam}}
 @endsection
 @section('content')
-    <h1 class="page-header">{{$dier->naam}}</h1>
+    <h1 class="page-header"></h1>
     @include('dieren.components.dierCard--show')
 @endsection
