@@ -28,7 +28,7 @@
         </section>
 
         <section class="create-form__section u-center-h">
-            <button class="create-form__button" type="submit">Post plaatsen</button>
+            <button class="create-form__button" type="submit">Profiel aanmaken</button>
         </section>
     </form>
 </article>

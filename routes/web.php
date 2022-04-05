@@ -21,7 +21,6 @@ Route::get('/', function(){
 });
 
 Route::middleware(['auth', 'isBlocked'])->group(function (){
-    Route::get('/oppassers', [\App\Http\Controllers\OppasserController::class,'index']);
     Route::get('/oppassers/create', [\App\Http\Controllers\OppasserController::class,'create']);
     Route::get('/oppassers/{id}', [\App\Http\Controllers\OppasserController::class,'show']);
 
