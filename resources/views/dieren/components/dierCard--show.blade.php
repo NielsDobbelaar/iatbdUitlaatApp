@@ -9,7 +9,7 @@
             <p>Van: {{$dier->startDatum}}</p>
             <p>Tot: {{$dier->eindDatum}}</p>
             <p>Soort: {{$dier->diersoort}}</p>
-            <p>Uur tarief: {{$dier->uurtarief}}</p>
+            <p>Uur tarief: {{$dier->uurtarief}} Euro</p>
             <p>Over {{$dier->naam}}: {{$dier->beschrijving}}</p>
         </section>
         <section class="dierCard__btnSection u-center-h u-flex-gap-2">
